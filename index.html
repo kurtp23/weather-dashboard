@@ -33,42 +33,81 @@
         </button>
       </div>
     </nav>
-    <div class="container-fluid main">
-      <div class="row">
-        <div class="col-3" id="searchCol">
-          <form class="form-inline">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              id="input"
-            />
-            <button
-              class="btn btn-outline-success my-2 my-sm-0"
-              style="background-color: white"
-              type="submit"
-              id="submit"
-            >
-              Search
-            </button>
-          </form>
-        </div>
-        <div class="col-9">
-          <div class="row" id="today">test row</div>
-          <div class="row" id="forecast">test row</div>
+    <!-- <div class="container-fluid main"> -->
+    <div class="num1 row">
+      <div class="col-2" id="searchCol">
+        <form class="form-inline">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            id="input"
+          />
+          <button
+            class="btn btn-outline-success my-2 my-sm-0"
+            style="background-color: white"
+            type="submit"
+            id="submit"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+      <div class="col-10">
+        <div class="row" id="today"></div>
+        <div class="row" id="forecast">
+          <div class="card" style="width: 14rem">
+            <div class="card-body">
+              <h5 class="card-title day1"></h5>
+              <h5 class="card-subtitle mb-2 temp1"></h5>
+              <h5 class="card-text hum1"></h5>
+            </div>
+          </div>
+          <div class="card" style="width: 14rem">
+            <div class="card-body">
+              <h5 class="card-title day2"></h5>
+              <h5 class="card-subtitle mb-2 temp2"></h5>
+              <h5 class="card-text hum2"></h5>
+            </div>
+          </div>
+          <div class="card" style="width: 14rem">
+            <div class="card-body">
+              <h5 class="card-title day3"></h5>
+              <h5 class="card-subtitle mb-2 temp3"></h5>
+              <h5 class="card-text hum3"></h5>
+            </div>
+          </div>
+          <div class="card" style="width: 14rem">
+            <div class="card-body">
+              <h5 class="card-title day4"></h5>
+              <h5 class="card-subtitle mb-2 temp4"></h5>
+              <h5 class="card-text hum4"></h5>
+            </div>
+          </div>
+          <div class="card" style="width: 14rem">
+            <div class="card-body">
+              <h5 class="card-title day5"></h5>
+              <h5 class="card-subtitle mb-2 temp5"></h5>
+              <h5 class="card-text hum5"></h5>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <script src="assets/script.js"></script>
+    <!-- </div> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="" async defer></script>
+    <script src="assets/script.js"></script>
   </body>
 </html>

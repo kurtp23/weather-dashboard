@@ -1,7 +1,14 @@
-.main {
+/* .main {
   background-color: lightblue;
+  width: 100vw;
+  height: 100vw;
 }
 #searchCol {
   background-color: red;
   padding: 1%;
+  /* height: 100%; */
 }
+.num1 {
+  height: 100vw;
+  background-color: lightblue;
+} 
