@@ -34,9 +34,9 @@ function showWeather(cityName) {
     console.log(windSpeed);
     var humidity = response.main.humidity;
     console.log(humidity);
-    var date = moment.unix(response.dt).format(",dddd MM/DD/YYYY");
+    var date = moment.unix(response.dt).format(", dddd MM/DD/YYYY");
     var cityName = $("<h1>").append(response.name);
-    cityName.append(" " + date);
+    cityName.append(date);
     var tempDiv = $("<p>").append("Temperature: " + tempF + " deg");
     var windDiv = $("<p>").append("Wind Speed: " + windSpeed + " mph");
     var humidityDiv = $("<p>").append("Humidity: " + humidity + "%");
@@ -75,8 +75,8 @@ function showForecast(cityName) {
       var hum = forecast[indexes[i]].main.humidity;
       console.log(date);
       $(".day" + (i + 1)).html(date);
-      $(".temp" + (i + 1)).html(temp);
-      $(".hum" + (i + 1)).html(hum);
+      $(".temp" + (i + 1)).html("Temp: " + temp + " deg");
+      $(".hum" + (i + 1)).html("Humidity: " + hum + " %");
     }
   });
 }

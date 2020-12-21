@@ -12,3 +12,19 @@
   height: 100vw;
   background-color: lightblue;
 } 
+.col-10{
+    background-color: lightblue;
+}
+.col-2{
+
+}
+html{
+    background-color: lightblue;
+}
+.card{
+ margin: auto;
+ height: 180px;
+}
+#today{
+    color: white;
+}
