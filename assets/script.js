@@ -1,8 +1,7 @@
 // This is our API key. Add your own API key between the ""
 var APIKey = "21747a34edbbbd58f73052aee9752074";
 var newPlace = "Roseburg,Oregon";
-showWeather(newPlace);
-showForecast(newPlace);
+
 // Here we are building the URL we need to query the database
 
 $("#submit").on("click", function (event) {
@@ -42,12 +41,6 @@ function showWeather(cityName) {
     var humidityDiv = $("<p>").append("Humidity: " + humidity + "%");
     var container = $("<div>").append(cityName, tempDiv, humidityDiv, windDiv);
     $("#today").html(container);
-    // Create CODE HERE to Log the queryURL
-    // Create CODE HERE to log the resulting object
-    // Create CODE HERE to calculate the temperature (converted from Kelvin)
-    // Create CODE HERE to transfer content to HTML
-    // Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
-    // Create CODE HERE to dump the temperature content into HTML
   });
 }
 // Here we are building the URL we need to query the database
@@ -68,15 +61,59 @@ function showForecast(cityName) {
     var forecast = response2.list;
     console.log(forecast);
 
-    var indexes = [7, 14, 21, 28, 35];
-    for (let i = 0; i < 5; i += 1) {
-      var date = moment.unix(forecast[indexes[i]].dt).format("dddd, MMMM Do YYYY");
-      var temp = forecast[indexes[i]].main.temp;
+    var indexes = [8, 16, 24, 32, 39];
+    for (let i = 0; i < 5; i++) {
+      var date = moment.unix(forecast[indexes[i]].dt).format("dddd, MM/DD/YYYY");
+      var temp = forecast[indexes[i]].main.temp_max;
+      var tempm = forecast[indexes[i]].main.temp_min;
       var hum = forecast[indexes[i]].main.humidity;
       console.log(date);
       $(".day" + (i + 1)).html(date);
       $(".temp" + (i + 1)).html("Temp: " + temp + " deg");
-      $(".hum" + (i + 1)).html("Humidity: " + hum + " %");
+      $(".tempM1" + (i + 1)).html("Temp: " + tempm + " deg");
+      $(".hum" + (i + 1)).html("Humidity: " + hum + "%");
     }
   });
 }
+
+if (localStorage.getItem("results") === null) {
+  localStorage.setItem("results", JSON.stringify([]));
+}
+
+$("#searchForm").on("submit", function (event) {
+  event.preventDefault();
+  var myResults = JSON.parse(localStorage.getItem("results"));
+  console.log(myResults);
+  var newResult = $("#input").val();
+  if (!myResults.includes(newResult)) {
+    myResults.unshift(newResult);
+  }
+  console.log(newResult);
+
+  console.log(myResults);
+
+  localStorage.setItem("results", JSON.stringify(myResults));
+  displayCities();
+});
+function displayCities() {
+  var myResults = JSON.parse(localStorage.getItem("results"));
+  $("#cityList").empty();
+  $.each(myResults, function (index, value) {
+    var city = `
+  <li id="cityStor" class="list-group-item">${value}</li>
+ `;
+
+    $("#cityList").append(city);
+    showWeather(myResults[0]);
+    showForecast(myResults[0]);
+    $(".list-group-item").on("click", function () {
+      this.textContent;
+      console.log(this.textContent);
+      showWeather(this.textContent);
+      showForecast(this.textContent);
+    });
+  });
+}
+displayCities();
+showWeather(newPlace);
+showForecast(newPlace);

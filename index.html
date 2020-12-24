@@ -36,7 +36,7 @@
     <!-- <div class="container-fluid main"> -->
     <div class="num1 row">
       <div class="col-2" id="searchCol">
-        <form class="form-inline">
+        <form id="searchForm" class="form-inline">
           <input
             class="form-control mr-sm-2"
             type="search"
@@ -48,11 +48,12 @@
             class="btn btn-outline-success my-2 my-sm-0"
             style="background-color: white"
             type="submit"
-            id="submit"
+            id="searchCity"
           >
             Search
           </button>
         </form>
+        <ul id="cityList" class="list-group"></ul>
       </div>
       <div class="col-10">
         <div class="row" id="today">test row</div>
