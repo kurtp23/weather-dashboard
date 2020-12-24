@@ -1,6 +1,6 @@
 # weather-dashboard
 Weather dashboard that displays each city searched, displays todays weather, displays five day forecast.
-
+live website link: https://kurtp23.github.io/weather-dashboard/
 
 Websites first load
 [![weather-first-load.jpg](https://i.postimg.cc/Fsf1PHXS/weather-first-load.jpg)](https://postimg.cc/SJhyRqsQ)
